@@ -221,7 +221,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                                 <div data-tilt class="thumb">
-                                    <img src="img/Events/end2.png" alt="">
+                                    <img src="img/Events/end.png" alt="">
                                 </div>
                                 <div class="performer_heading">
                                     <a
@@ -754,14 +754,27 @@
     <script src="js/main.min.js"></script>
     <script>
         // Preloader hiding
-        window.addEventListener('load', function () {
+        function hidePreloader() {
             const preloader = document.querySelector('.preloader');
-            if (preloader) {
+            if (preloader && !preloader.classList.contains('fade-out')) {
+                preloader.classList.add('fade-out');
                 setTimeout(() => {
-                    preloader.classList.add('fade-out');
-                }, 1500); // 1.5s delay for effect
+                    if (preloader) preloader.style.display = 'none';
+                }, 800);
             }
+        }
+
+        // Hide when DOM is ready (don't wait for massive images like the 31MB banner.gif)
+        window.addEventListener('DOMContentLoaded', function () {
+            // Still give it a small delay for aesthetic effect
+            setTimeout(hidePreloader, 1500);
         });
+
+        // Fallback for older browsers or edge cases
+        window.addEventListener('load', hidePreloader);
+
+        // Absolute safety fallback (5 seconds maximum)
+        setTimeout(hidePreloader, 5000);
 
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.custom-cursor-dot');
