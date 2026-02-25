@@ -237,14 +237,13 @@ h6 {
     font-weight: 900 !important;
     text-transform: uppercase;
     letter-spacing: -2px;
-    color: white;
+    color: #ffffff !important;
     margin: 0;
     position: relative;
     font-family: var(--font-heading);
     line-height: 0.9;
-    background: none !important;
-    -webkit-text-fill-color: initial !important;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 .slider_text h1 span {

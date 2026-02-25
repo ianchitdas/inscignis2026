@@ -6,3 +6,6 @@ git push -u origin main
 
 npx serve -l 8080
 
+git add .
+git commit -m "Update timeline with new schedule and venues"
+git push origin main
