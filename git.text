@@ -9,3 +9,13 @@ npx serve -l 8080
 git add .
 git commit -m "Update timeline with new schedule and venues"
 git push origin main
+
+
+
+ git reset --mixed origin/main
+ git add .
+ git commit -m "Bhang Bharosa"
+ git push origin main
+ git pull ---rebase
+ git push
+ 
